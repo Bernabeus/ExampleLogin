@@ -148,7 +148,7 @@ public class LoginLabsTest {
 
 	@Test
 	public void testLogin4() throws InterruptedException {
-		driver.findElement(userNameLocator).sendKeys("performance_glitch_user12");
+		driver.findElement(userNameLocator).sendKeys("performance_glitch_user");
 		driver.findElement(passwordLocator).sendKeys("secret_sauce");
 		driver.findElement(loginBtnLocator).click();
 
