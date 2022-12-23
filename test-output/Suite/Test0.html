@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>TestNG:  Default test</title>
+<title>TestNG:  Test0</title>
 <link href="../testng.css" rel="stylesheet" type="text/css" />
 <link href="../my-testng.css" rel="stylesheet" type="text/css" />
 
@@ -53,13 +53,13 @@ function toggleAllBoxes() {
 
 </head>
 <body>
-<h2 align='center'>Default test</h2><table border='1' align="center">
+<h2 align='center'>Test0</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>3/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Dec 23 14:47:39 ECT 2022</td>
+<td>Started on:</td><td>Fri Dec 23 14:48:20 ECT 2022</td>
 </tr>
-<tr><td>Total time:</td><td>16 seconds (16453 ms)</td>
+<tr><td>Total time:</td><td>47 seconds (47030 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,15 +76,19 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.examplet.testng.Login_Test2.login()'><b>login</b><br>Test class: com.examplet.testng.Login_Test2<br>Parameters: performance_glitch_user, s1ecret_sauce</td>
+<td title='com.examplet.testng.Login_Test1.login()'><b>login</b><br>Test class: com.examplet.testng.Login_Test1<br>Parameters: locked_out_user, secret_sauce</td>
 <td><div><pre>java.lang.AssertionError: expected [https://www.saucedemo.com/inventory.html] but found [https://www.saucedemo.com/]
+	at com.examplet.testng.Login_Test1.login(Login_Test1.java:60)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1465800495", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1465800495'><pre>java.lang.AssertionError: expected [https://www.saucedemo.com/inventory.html] but found [https://www.saucedemo.com/]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
 	at org.testng.Assert.assertEquals(Assert.java:131)
 	at org.testng.Assert.assertEquals(Assert.java:655)
 	at org.testng.Assert.assertEquals(Assert.java:665)
-	at com.examplet.testng.Login_Test2.login(Login_Test2.java:52)
+	at com.examplet.testng.Login_Test1.login(Login_Test1.java:60)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -113,8 +117,16 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace94354228", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace94354228'><pre>java.lang.AssertionError: expected [https://www.saucedemo.com/inventory.html] but found [https://www.saucedemo.com/]
+</pre></div></td>
+<td>4</td>
+<td>com.examplet.testng.Login_Test1@4be29ed9</td></tr>
+<tr>
+<td title='com.examplet.testng.Login_Test2.login()'><b>login</b><br>Test class: com.examplet.testng.Login_Test2<br>Parameters: performance_glitch_user, s1ecret_sauce</td>
+<td><div><pre>java.lang.AssertionError: expected [https://www.saucedemo.com/inventory.html] but found [https://www.saucedemo.com/]
+	at com.examplet.testng.Login_Test2.login(Login_Test2.java:52)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2063581529", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2063581529'><pre>java.lang.AssertionError: expected [https://www.saucedemo.com/inventory.html] but found [https://www.saucedemo.com/]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
@@ -152,7 +164,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>4</td>
-<td>com.examplet.testng.Login_Test2@3a7442c7</td></tr>
+<td>com.examplet.testng.Login_Test2@75437611</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -166,7 +178,17 @@ function toggleAllBoxes() {
 <td title='com.examplet.testng.Login_Test2.login()'><b>login</b><br>Test class: com.examplet.testng.Login_Test2<br>Parameters: performance_glitch_user, secret_sauce</td>
 <td></td>
 <td>9</td>
-<td>com.examplet.testng.Login_Test2@3a7442c7</td></tr>
+<td>com.examplet.testng.Login_Test2@75437611</td></tr>
+<tr>
+<td title='com.examplet.testng.Login_Test1.login()'><b>login</b><br>Test class: com.examplet.testng.Login_Test1<br>Parameters: standard_user, secret_sauce</td>
+<td></td>
+<td>4</td>
+<td>com.examplet.testng.Login_Test1@4be29ed9</td></tr>
+<tr>
+<td title='com.examplet.testng.Login_Test1.login()'><b>login</b><br>Test class: com.examplet.testng.Login_Test1<br>Parameters: problem_user, secret_sauce</td>
+<td></td>
+<td>4</td>
+<td>com.examplet.testng.Login_Test1@4be29ed9</td></tr>
 </table><p>
 </body>
 </html>
