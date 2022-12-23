@@ -36,12 +36,30 @@ public class LoginLabsTest {
 		test = report.startTest("ExtentDemo");
 	}
 
+	
 	@Before
 	public void setUp() {
 		System.setProperty("webdriver.chrome.value", "./src/test/resources/chromedriver/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.saucedemo.com/");
+	}
+	
+	public void process(String numero) throws InterruptedException {
+		Thread.sleep(4000);
+
+		String url = driver.getCurrentUrl();
+
+		if (url.equals("https://www.saucedemo.com/inventory.html")) {
+			test.log(LogStatus.PASS, "Inicio de " + numero + " sesion correcto");
+			assertEquals("https://www.saucedemo.com/inventory.html", driver.getCurrentUrl());
+			driver.quit();
+		} else {
+			test.log(LogStatus.FAIL, numero + " prueba fallida");
+			driver.quit();
+			assertEquals("https://www.saucedemo.com/inventory.html", url);
+			
+		}
 	}
 
 	@Test
@@ -51,20 +69,7 @@ public class LoginLabsTest {
 		driver.findElement(loginBtnLocator).click();
 
 		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		Thread.sleep(4000);
-
-		String url = driver.getCurrentUrl();
-
-		if (url.equals("https://www.saucedemo.com/inventory.html")) {
-			test.log(LogStatus.PASS, "Inicio de primera sesion correcto");
-			assertEquals("https://www.saucedemo.com/inventory.html", driver.getCurrentUrl());
-			driver.quit();
-		} else {
-			test.log(LogStatus.FAIL, "Prueba fallida en el primer test");
-			driver.quit();
-			assertEquals("https://www.saucedemo.com/inventory.html", url);
-			
-		}
+		process("primera");
 	}
 
 	@Test
@@ -74,19 +79,7 @@ public class LoginLabsTest {
 		driver.findElement(loginBtnLocator).click();
 
 		// driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
-		Thread.sleep(4000);
-		String url = driver.getCurrentUrl();
-
-		if (url.equals("https://www.saucedemo.com/inventory.html")) {
-			test.log(LogStatus.PASS, "Inicio de sesion correcto ");
-			assertEquals("https://www.saucedemo.com/inventory.html", driver.getCurrentUrl());
-			driver.quit();
-		} else {
-			test.log(LogStatus.ERROR, "Prueba fallida en el segundo test");
-			driver.quit();
-			assertEquals("https://www.saucedemo.com/inventory.html", url);
-			
-		}
+		process("segunda");
 		
 	}
 
@@ -97,7 +90,7 @@ public class LoginLabsTest {
 		driver.findElement(passwordLocator).sendKeys("secret_sauce");
 		driver.findElement(loginBtnLocator).click();
 
-		Thread.sleep(4000);
+		
 		/*List<WebElement> spans = driver.findElements(By.tagName("span"));
 
 		if (!spans.isEmpty()) {
@@ -111,18 +104,7 @@ public class LoginLabsTest {
 			test.log(LogStatus.FAIL, "Prueba fallida");
 		}*/
 		
-		String url = driver.getCurrentUrl();
-
-		if (url.equals("https://www.saucedemo.com/inventory.html")) {
-			test.log(LogStatus.PASS, "Inicio de tercera sesion correcto ");
-			assertEquals("https://www.saucedemo.com/inventory.html", driver.getCurrentUrl());
-			driver.quit();
-		} else {
-			test.log(LogStatus.FAIL, "Prueba fallida en el tercer test");
-			driver.quit();
-			assertEquals("https://www.saucedemo.com/inventory.html", url);
-			
-		}
+		process("tercera");
 	}
 
 	@Test
@@ -131,40 +113,17 @@ public class LoginLabsTest {
 		driver.findElement(passwordLocator).sendKeys("secret_sauce");
 		driver.findElement(loginBtnLocator).click();
 
-		Thread.sleep(4000);
-		String url = driver.getCurrentUrl();
-
-		if (url.equals("https://www.saucedemo.com/inventory.html")) {
-			test.log(LogStatus.PASS, "Inicio de cuarta sesion correcto ");
-			assertEquals("https://www.saucedemo.com/inventory.html", driver.getCurrentUrl());
-			driver.quit();
-		} else {
-			test.log(LogStatus.FAIL, "Prueba fallida en el cuarto test");
-			driver.quit();
-			assertEquals("https://www.saucedemo.com/inventory.html", url);
-			
-		}
+		
+		process("cuarta");
 	}
 
 	@Test
 	public void testLogin4() throws InterruptedException {
 		driver.findElement(userNameLocator).sendKeys("performance_glitch_user");
-		driver.findElement(passwordLocator).sendKeys("secret_sauce");
+		driver.findElement(passwordLocator).sendKeys("secret_sauce1");
 		driver.findElement(loginBtnLocator).click();
 
-		Thread.sleep(4000);
-		String url = driver.getCurrentUrl();
-
-		if (url.equals("https://www.saucedemo.com/inventory.html")) {
-			test.log(LogStatus.PASS, "Inicio de quinta sesion correcto ");
-			assertEquals("https://www.saucedemo.com/inventory.html", driver.getCurrentUrl());
-			driver.quit();
-		} else {
-			test.log(LogStatus.FAIL, "Prueba fallida en el quinto test");
-			driver.quit();
-			assertEquals("https://www.saucedemo.com/inventory.html", url);
-			
-		}
+		process("quinta");
 
 	}
 
